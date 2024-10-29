@@ -1,0 +1,45 @@
+.home-container {
+  background-image: url("../assets/backgroundimg.jpeg");
+  background-size: cover; /* Gör så att bilden täcker hela området */
+  background-position: center; /* Centrerar bakgrundsbilden */
+  background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* För att organisera elementen vertikalt */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.movie-item {
+  width: calc(25% - 20px); /* 4 filmer på rad */
+  margin: 10px;
+  text-align: center;
+}
+
+.movie-item img {
+  max-width: 80%;
+  height: auto;
+}
+
+.favorites-list {
+  margin-top: 20px;
+}
+
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px 0;
+}

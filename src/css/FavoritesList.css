@@ -1,0 +1,35 @@
+.favorites-list {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.favorites-list h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.favorites-list div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.favorites-list div h3 {
+  font-size: 18px;
+}
+
+.favorites-list button {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.favorites-list button:hover {
+  background-color: #c82333;
+}
