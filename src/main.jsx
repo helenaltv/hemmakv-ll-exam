@@ -5,7 +5,7 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { store } from "./redux/store.js";
 import TagManager from "react-gtm-module";
 import { BrowserRouter as Router } from "react-router-dom";
 

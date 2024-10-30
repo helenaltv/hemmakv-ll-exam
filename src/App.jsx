@@ -6,6 +6,8 @@ import MovieDetails from "./pages/MovieDetails";
 import Favorites from "./pages/Favorites";
 import NavigationMenu from "./components/NavigationMenu";
 import ReactGa from "react-ga4";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const TRACKING_ID = "G-4LK5B4E27J";
 ReactGa.initialize(TRACKING_ID);
