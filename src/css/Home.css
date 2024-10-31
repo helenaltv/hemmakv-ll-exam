@@ -3,7 +3,7 @@
   background-size: cover; /* Gör så att bilden täcker hela området */
   background-position: center; /* Centrerar bakgrundsbilden */
   background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
-  height: auto;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column; /* För att organisera elementen vertikalt */
@@ -11,6 +11,7 @@
   align-items: center;
   text-align: center;
   padding: 20px;
+  color: white;
 }
 
 .movie-list {
