@@ -9,7 +9,7 @@ import ReactGa from "react-ga4";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
-const TRACKING_ID = "G-4LK5B4E27J";
+const TRACKING_ID = "G-4LK5B4E27J"; // Google Analytics Tracking ID
 ReactGa.initialize(TRACKING_ID);
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
     <>
       <NavigationMenu />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home addToFavorites={addToFavorites} />} />
         <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>

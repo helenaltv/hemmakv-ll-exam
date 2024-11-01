@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "../css/FavoriteButton.css"; // Importera stilar för knappen
-
+import "../css/FavoriteButton.css";
 const FavoriteButton = ({ movie }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const exists = favorites.find((fav) => fav.imdbID === movie.imdbID);
-    if (exists) setIsFavorite(true); // Uppdatera tillståndet om filmen redan finns i favoriter
+    if (exists) setIsFavorite(true);
   }, [movie]);
 
   const toggleFavorite = () => {

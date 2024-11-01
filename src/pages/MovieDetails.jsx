@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import FavoriteButton from "../components/FavoriteButton"; // Importera FavoriteButton
+import FavoriteButton from "../components/FavoriteButton";
 import "../css/MovieDetails.css";
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-
-  const API_KEY = "32552934"; // Använd din API-nyckel
+  const [error, setError] = useState(null);
+  const API_KEY = "32552934"; // Your API key
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -17,8 +17,10 @@ const MovieDetails = () => {
           `https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`
         );
         setMovie(response.data);
+        setError(null); // Clear any previous errors
       } catch (error) {
         console.error("Error fetching movie details:", error);
+        setError("Could not fetch movie details."); // Set error message to state
       }
     };
     fetchMovieDetails();
@@ -27,35 +29,25 @@ const MovieDetails = () => {
   if (!movie) return <p>Loading...</p>;
 
   return (
-    <div>
-      <MetaTags
-        title="MovieDetails | Film App"
-        description="Om filmer"
-        keywords="filmer, kommedi, action, titta, streamma, streaming, app"
-      />
-      <div className="movie-details">
-        <div className="movie-container">
-          <img
-            src={
-              movie.Poster !== "N/A" ? movie.Poster : "placeholder-image-url"
-            }
-            alt={movie.Title}
-            className="movie-poster"
-          />
-          <div className="movie-info">
-            <h1>{movie.Title}</h1>
-            <p>
-              <strong>Year:</strong> {movie.Year}
-            </p>
-            <p>
-              <strong>Genre:</strong> {movie.Genre}
-            </p>
-            <p>
-              <strong>Plot:</strong> {movie.Plot}
-            </p>
-            {/* Använd FavoriteButton-komponenten */}
-            <FavoriteButton movie={movie} />
-          </div>
+    <div className="movie-details">
+      <div className="movie-container">
+        <img
+          src={movie.Poster !== "N/A" ? movie.Poster : "placeholder-image-url"}
+          alt={movie.Title}
+          className="movie-poster"
+        />
+        <div className="movie-info">
+          <h1>{movie.Title}</h1>
+          <p>
+            <strong>Year:</strong> {movie.Year}
+          </p>
+          <p>
+            <strong>Genre:</strong> {movie.Genre}
+          </p>
+          <p>
+            <strong>Plot:</strong> {movie.Plot}
+          </p>
+          <FavoriteButton movie={movie} />
         </div>
       </div>
     </div>

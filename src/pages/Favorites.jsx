@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import "../css/Favorites.css";
+import MetaTags from "../seo/MetaTags.js";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -23,8 +24,7 @@ const Favorites = () => {
     <div>
       <MetaTags
         title="Favorites | Film App"
-        description="Favoriter"
-        keywords="filmer, favoriter, kommedi, action, titta, streamma, streaming, app"
+        description="Your favorite movies"
       />
       <div>
         <h1>Mina Favoriter</h1>

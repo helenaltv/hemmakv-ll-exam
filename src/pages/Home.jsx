@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../css/Home.css"; // Se till att du har CSS-filen kopplad
-import { Link } from "react-router-dom"; // För att länka till filmdetaljer
-import MetaTags from "../seo/MetaTags";
+import { Link } from "react-router-dom";
+import MetaTags from "../seo/MetaTags.js";
+import "../css/Home.css";
 
-const Home = () => {
+const Home = ({ addToFavorites }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
 
@@ -29,11 +29,7 @@ const Home = () => {
 
   return (
     <div>
-      <MetaTags
-        title="Home | Film App"
-        description="Strema filmer"
-        keywords="filmer, titta, streamma, streaming, app"
-      />
+      <MetaTags title="Home | Film App" description="Search for movies" />
       <div className="home-container">
         <h1>Search for Movies</h1>
         <form onSubmit={handleSearch}>
@@ -54,6 +50,9 @@ const Home = () => {
                   <h2>{movie.Title}</h2>
                   <p>{movie.Year}</p>
                 </Link>
+                <button onClick={() => addToFavorites(movie)}>
+                  Add to Favorites
+                </button>
               </div>
             ))}
         </div>

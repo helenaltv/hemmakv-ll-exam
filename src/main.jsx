@@ -12,7 +12,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 const tagManagerArgs = {
   gtmId: "GTM-PMZVC96N",
 };
-
 TagManager.initialize(tagManagerArgs);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

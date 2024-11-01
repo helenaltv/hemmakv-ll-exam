@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  margin-top: 150px; /* Minska marginalen */
+  padding: 50px;
+  overflow: auto;
 }
 
 .movie-card {
@@ -25,4 +28,10 @@
 
 .movie-card button {
   margin-top: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrera innehållet horisontellt */
+  justify-content: flex-start; /* Se till att det börjar högst upp */
 }

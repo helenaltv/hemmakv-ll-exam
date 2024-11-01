@@ -24,7 +24,7 @@ Applikationen använder Redux, React Router, och Google Tag Manager, react-route
 Tag Manager gör det möjligt att spåra användarbeteende och samla in data för analytik utan att behöva direktintegrera koden för varje spårningsverktyg. Här används GTM-PMZVC96N som är ID för Tag Manager-konfigurationen.
 
 Magataggar sätter sidans titel, som visas i webbläsarens flik och i sökresultat,
-description ger kort sammanfattning av sidans innehåll, viktig för SEO och keywords visar relevanta söktermer för att hjälpa sökmotorer att förstå sidans ämne.
+description ger kort sammanfattning av sidans innehåll, viktig för SEO.
 
 # index.html
 
