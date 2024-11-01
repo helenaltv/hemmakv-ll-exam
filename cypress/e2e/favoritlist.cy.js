@@ -1,4 +1,3 @@
-// favoritlist.cy.js
 describe("FavoritesList Component", () => {
   beforeEach(() => {
     cy.visit("http://localhost:5173/");

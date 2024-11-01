@@ -23,6 +23,9 @@ Hemmakväll är en film-sökningsapplikation som gör det möjligt för använda
 Applikationen använder Redux, React Router, och Google Tag Manager, react-router-dom för att navigera mellan olika sidor: Home, MovieDetails, och Favorites. Varje sida har sin egen rutt definierad i <Routes>, vilket gör det enkelt att navigera mellan sidorna. Redux används för global tillståndshantering, och Provider-komponenten från Redux omsluter App för att ge tillgång till tillstånd och actions som finns i Redux-butiken (store). Detta gör att komponenter kan läsa och uppdatera det globala tillståndet.
 Tag Manager gör det möjligt att spåra användarbeteende och samla in data för analytik utan att behöva direktintegrera koden för varje spårningsverktyg. Här används GTM-PMZVC96N som är ID för Tag Manager-konfigurationen.
 
+Magataggar sätter sidans titel, som visas i webbläsarens flik och i sökresultat,
+description ger kort sammanfattning av sidans innehåll, viktig för SEO och keywords visar relevanta söktermer för att hjälpa sökmotorer att förstå sidans ämne.
+
 # index.html
 
 Det är basstrukturen för applikationen och inkluderar Google Tag Manager (GTM) och Google Analytics för att spåra användarinteraktioner. GTM-koden initieras både i script-taggar i <head> och <noscript> för att stödja användare som har JavaScript avaktiverat.

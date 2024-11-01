@@ -27,26 +27,35 @@ const MovieDetails = () => {
   if (!movie) return <p>Loading...</p>;
 
   return (
-    <div className="movie-details">
-      <div className="movie-container">
-        <img
-          src={movie.Poster !== "N/A" ? movie.Poster : "placeholder-image-url"}
-          alt={movie.Title}
-          className="movie-poster"
-        />
-        <div className="movie-info">
-          <h1>{movie.Title}</h1>
-          <p>
-            <strong>Year:</strong> {movie.Year}
-          </p>
-          <p>
-            <strong>Genre:</strong> {movie.Genre}
-          </p>
-          <p>
-            <strong>Plot:</strong> {movie.Plot}
-          </p>
-          {/* Använd FavoriteButton-komponenten */}
-          <FavoriteButton movie={movie} />
+    <div>
+      <MetaTags
+        title="MovieDetails | Film App"
+        description="Om filmer"
+        keywords="filmer, kommedi, action, titta, streamma, streaming, app"
+      />
+      <div className="movie-details">
+        <div className="movie-container">
+          <img
+            src={
+              movie.Poster !== "N/A" ? movie.Poster : "placeholder-image-url"
+            }
+            alt={movie.Title}
+            className="movie-poster"
+          />
+          <div className="movie-info">
+            <h1>{movie.Title}</h1>
+            <p>
+              <strong>Year:</strong> {movie.Year}
+            </p>
+            <p>
+              <strong>Genre:</strong> {movie.Genre}
+            </p>
+            <p>
+              <strong>Plot:</strong> {movie.Plot}
+            </p>
+            {/* Använd FavoriteButton-komponenten */}
+            <FavoriteButton movie={movie} />
+          </div>
         </div>
       </div>
     </div>

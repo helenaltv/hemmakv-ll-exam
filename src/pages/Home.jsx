@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../css/Home.css"; // Se till att du har CSS-filen kopplad
 import { Link } from "react-router-dom"; // För att länka till filmdetaljer
+import MetaTags from "../seo/MetaTags";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,28 +28,35 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
-      <h1>Search for Movies</h1>
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search movies..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-      <div className="movie-list">
-        {movies &&
-          movies.map((movie) => (
-            <div key={movie.imdbID} className="movie-item">
-              <Link to={`/movies/${movie.imdbID}`}>
-                <img src={movie.Poster} alt={movie.Title} />
-                <h2>{movie.Title}</h2>
-                <p>{movie.Year}</p>
-              </Link>
-            </div>
-          ))}
+    <div>
+      <MetaTags
+        title="Home | Film App"
+        description="Strema filmer"
+        keywords="filmer, titta, streamma, streaming, app"
+      />
+      <div className="home-container">
+        <h1>Search for Movies</h1>
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search movies..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="submit">Search</button>
+        </form>
+        <div className="movie-list">
+          {movies &&
+            movies.map((movie) => (
+              <div key={movie.imdbID} className="movie-item">
+                <Link to={`/movies/${movie.imdbID}`}>
+                  <img src={movie.Poster} alt={movie.Title} />
+                  <h2>{movie.Title}</h2>
+                  <p>{movie.Year}</p>
+                </Link>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,20 @@
+import { createWriteStream } from "fs";
+import { SitemapStream, streamToPromise } from "sitemap";
+
+// Skapa en sitemap stream
+const sitemapStream = new SitemapStream({ hostname: "https://example.com" });
+
+// Lägg till dina rutter
+sitemapStream.write({ url: "/", changefreq: "daily", priority: 1.0 });
+sitemapStream.write({ url: "/about", changefreq: "monthly", priority: 0.7 });
+sitemapStream.write({ url: "/contact", changefreq: "monthly", priority: 0.7 });
+// Lägg till fler rutter...
+
+// Avsluta streamen
+sitemapStream.end();
+
+// Spara till fil
+streamToPromise(sitemapStream).then((data) => {
+  createWriteStream("./public/sitemap.xml").write(data);
+  console.log("Sitemap generated successfully!");
+});

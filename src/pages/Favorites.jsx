@@ -21,25 +21,32 @@ const Favorites = () => {
 
   return (
     <div>
-      <h1>Mina Favoriter</h1>
-      <div className="favorite-list">
-        {favorites.length > 0 ? (
-          favorites.map((movie) => (
-            <div key={movie.imdbID} className="favorite-item">
-              <Link to={`/movies/${movie.imdbID}`}>
-                <h3>
-                  {movie.Title} ({movie.Year})
-                </h3>
-              </Link>
-              <FaTrash
-                className="trash-icon"
-                onClick={() => removeFavorite(movie.imdbID)}
-              />
-            </div>
-          ))
-        ) : (
-          <p>Inga favoriter ännu.</p>
-        )}
+      <MetaTags
+        title="Favorites | Film App"
+        description="Favoriter"
+        keywords="filmer, favoriter, kommedi, action, titta, streamma, streaming, app"
+      />
+      <div>
+        <h1>Mina Favoriter</h1>
+        <div className="favorite-list">
+          {favorites.length > 0 ? (
+            favorites.map((movie) => (
+              <div key={movie.imdbID} className="favorite-item">
+                <Link to={`/movies/${movie.imdbID}`}>
+                  <h3>
+                    {movie.Title} ({movie.Year})
+                  </h3>
+                </Link>
+                <FaTrash
+                  className="trash-icon"
+                  onClick={() => removeFavorite(movie.imdbID)}
+                />
+              </div>
+            ))
+          ) : (
+            <p>Inga favoriter inlagda ännu.</p>
+          )}
+        </div>
       </div>
     </div>
   );
