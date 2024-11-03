@@ -1,10 +1,10 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-import "../css/MovieList.css";
+import "../assets/css/MovieList";
 
 const MovieList = ({ movies }) => {
   return (
-    <div className="movie-list">
+    <div className="movie-list mt-">
       {movies.map((movie) => (
         <MovieCard key={movie.imdbID} movie={movie} />
       ))}
